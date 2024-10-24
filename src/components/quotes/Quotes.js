@@ -2,7 +2,7 @@ import React from "react";
 import QuoteCard from "./QuoteCard";
 import CategoryForm from "./CategoryForm";
 
-const Quotes = ({ filteredQuotes, categories, category, handleCategoryChange, addToFavorites }) => {
+const Quotes = ({ filteredQuotes, categories, category, handleCategoryChange, addToFavorites, favoriteQuotes }) => {
     return (
     <section className='all-quotes'>
         <div className="category-header">
@@ -14,7 +14,7 @@ const Quotes = ({ filteredQuotes, categories, category, handleCategoryChange, ad
 
         
             {filteredQuotes.map((quote) => (
-                <QuoteCard key={quote.id} quote={quote} addToFavorites={addToFavorites} />
+                <QuoteCard key={quote.id} quote={quote} addToFavorites={addToFavorites} favoriteQuotes={favoriteQuotes} />
             ))}
         </div>
     </section>
