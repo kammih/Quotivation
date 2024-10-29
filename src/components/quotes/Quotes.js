@@ -7,8 +7,11 @@ const Quotes = ({ filteredQuotes, categories, category, handleCategoryChange, ad
     <section className='all-quotes'>
         <div className="category-header">
         <div className='quotes wrapper'>
-            <h2 className="category-header">Pick your Favorite Quotes Below</h2>
-            <p>Browse through your collection of quotes.</p>
+            <h2>Pick your Favorite Quotes Below</h2>
+            <p>
+              You have {filteredQuotes.length > 0 && "a collection of"} {filteredQuotes.length} great{" "}
+               {category !== "All" && category} {filteredQuotes.length === 1 ? "quote" : "quotes"}.
+            </p>
             <CategoryForm categories={categories} category={category} handleCategoryChange={handleCategoryChange} />
             </div>
 
@@ -19,6 +22,6 @@ const Quotes = ({ filteredQuotes, categories, category, handleCategoryChange, ad
         </div>
     </section>
  );
-};
+}
 
 export default Quotes;
